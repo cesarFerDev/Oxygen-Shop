@@ -131,6 +131,7 @@ body {
   border-color: #95989A;
   background: none;
   width: 70%;
+  text-align: center;
 }
 
 #subscribe-btn {
@@ -672,6 +673,10 @@ body {
     text-underline-offset: 50%;
   }
 
+  #sub-header {
+    margin-top: 40%;
+  }
+
   #sub-header-images img {
     width: 35%;
     margin-top: 5%;
@@ -755,6 +760,7 @@ body {
   }
 
   #form button {
+    margin-top: 10%;
     margin-left: 30%;
   }
 
@@ -774,13 +780,14 @@ body {
   }
 
   #form {
-    margin-top: 5%;
+    margin-top: 15%;
     width: 90%;
     margin-left: 3%;
   }
 
   #check {
     width: 90%;
+    margin-top: 10%;
   }
 
   #return-top img {

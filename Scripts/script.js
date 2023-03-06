@@ -175,6 +175,11 @@ closeBtn.addEventListener("click", () => {
     modal.close();
 });
 
+emailDialog.addEventListener("blur", () => {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailDialog.value) ===  false) {
+        emailDialog.style.borderColor = "red";
+    }
+});
 
 formDialog.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -185,7 +190,5 @@ formDialog.addEventListener("submit", (event) => {
         alert("Thank you!");  //Para comprbar que funciona el "submit"
     } else {
         emailDialog.value = "";
-        emailDialog.placeholder = "example@mail.com";
-        emailDialog.style.borderColor = "red";
     }
 });
