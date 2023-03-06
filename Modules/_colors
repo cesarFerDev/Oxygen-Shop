@@ -1,0 +1,10 @@
+:root {
+    --general-bg-color: #F7F7F7;
+    --section-bg-color: #FFFFFF;
+    --oxygen-blue: #08A6E4;
+    --card-blue: #07ACE6;
+    --menu-gray: #A5A5A5;
+    --card-border-color: #E8E9ED;
+    --oxygen-red-color: #FB3B64;
+    --oxygen-green-color: #55DFB4;
+} 

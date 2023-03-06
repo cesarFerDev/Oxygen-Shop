@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Cargar CSS-->
+    <link rel="stylesheet" type="text/css" href="Styles/style.css">
+
+    <!--Bootstrap 5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>OXYGEN Shop</title>
+
+</head>
+
+<body>
+
+    <!--Header-->
+    <header id="header-container">
+
+        <h2 id="logo">OXYGEN Shop</h2>
+        <button id="burger-btn"><img src="/Assets/icons/Menu burger.png" alt="Botón menú desplegable"></button>
+        <nav class="menu">
+            <a class="menu-item" href="#why-us">WHY US</a>
+            <a class="menu-item" href="#carta-container">BENEFITS</a>
+            <a class="menu-item" href="#pricing-container">PRICES</a>
+            <a class="menu-item" href="#form-container">CONTACT</a>
+        </nav>
+        <!--Barra porcentaje-->
+        <div id="scroll-bar"></div>
+    </header>
+
+    <!--Modal-->
+    <dialog id="modal">
+        <button id="close-modal"><img src="/Assets/icons/close cross.png" alt="Close dialog" /></button>
+        <form id="form-dialog" action="https://jsonplaceholder.typicode.com/guide/" method="POST">
+            <label for="subscribe">Subscribe to our newsletter!</label><br />
+            <input type="text" name="subscribe" id="subscribe" />
+            <button id="subscribe-btn">Subscribe</button>
+        </form>
+    </dialog>
+
+    <!--Imagen + why us-->
+    <section id="sub-header">
+        <h2>Sell More!</h2>
+        <span>Open shop on our platform and increase your sales</span>
+        <button>Open your shop</button>
+        <img id="why-us" src="Assets/img/background.png" alt="Someone working on their computer" />
+        <h3>The most popular sales platform in country</h3>
+
+        <div id="sub-header-images">
+            <img src="Assets/img/card1section1.svg" alt="100000+ daily entries" />
+            <img src="Assets/img/card2section1.svg" alt="2000000+ seen products every day" />
+            <img src="Assets/img/card3section1.svg" alt="10000 added posts daily" />
+        </div>
+
+    </section>
+
+    <!--Cartas Texto/Imagen-->
+    <section id="carta-container">
+        <div class="carta">
+            <div class="carta-text carta-text-font ">
+                <h2>Be always first!</h2>
+                <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat voluptate, soluta eaque,
+                    tenetur voluptatem, magnam corporis maiores possimus harum assumenda dolor ad alias minus!
+                    Sed
+                    fugiat quia similique ipsa excepturi!</span>
+                <hr id="red-border" />
+            </div>
+            <div class="carta-imgs">
+                <img id="mac-img" src="Assets/img/macbook.png" alt="Macbook" />
+                <img id="rombo-img" src="Assets/img/Rectangle 5.png" alt="Red diamond" />
+            </div>
+        </div>
+        <div class="carta">
+            <div class="carta-imgs">
+                <img id="circ-img" src="Assets/img/Ellipse 3.png" alt="Blue circle" />
+                <img id="iphone-img" src="Assets/img/iphone.png" alt="Iphone" />
+            </div>
+            <div class="carta-text carta-text-font ">
+                <h2>Your shop is where you are!</h2>
+                <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat voluptate, soluta eaque,
+                    tenetur voluptatem, magnam corporis maiores possimus harum assumenda dolor ad alias minus!
+                    Sed
+                    fugiat quia similique ipsa excepturi!</span>
+                <hr id="blue-border" />
+            </div>
+        </div>
+        <div id="carta-tercera">
+            <div class="carta" id="carta-texto-tercera">
+                <div class="texto-tercera carta-text-font ">
+                    <h2>Increase recognition your brand!</h2>
+                    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat voluptate, soluta
+                        eaque,
+                        tenetur voluptatem, magnam corporis maiores possimus harum assumenda dolor ad alias
+                        minus! Sed
+                        fugiat quia similique ipsa excepturi!</span>
+                    <hr id="green-border" />
+                </div>
+            </div>
+            <div class="carta img-tercera">
+                <img id="trumpet-img" src="Assets/img/bg-trumpet.png" alt="Trumpet" />
+            </div>
+        </div>
+    </section>
+
+    <!--Servicios/Precios-->
+    <section id="pricing-container">
+        <h2>Pricing</h2>
+        <select class="currency-selector" name="currency" id="currency">
+            <option value="usd">USD</option>
+            <option value="eur">EUR</option>
+            <option value="gbp">GBP</option>
+        </select>
+
+        <div id="pricing-options">
+            <div class="price-option basic-style">
+                <div class="price-option-text">
+                    <div class="option-header">
+                        <h3>Basic</h3>
+                        <h2 id="basic-price">$0</h2>
+                        <br>
+                    </div>
+                    <div class="option-services">
+                        <span><img src="/Assets/icons/check.png"> 100 MB HDD</span>
+                        <span><img src="/Assets/icons/check.png"> 1 Subdomain</span>
+                        <span><img src="/Assets/icons/check.png"> 2 E-mails</span>
+                        <span><img src="/Assets/icons/cross.png"> Two years license</span>
+                        <span><img src="/Assets/icons/cross.png"> Full support</span>
+                    </div>
+                </div>
+                <button class="option-btn">Begin</button>
+            </div>
+
+            <div class="price-option pro-style">
+                <div class="price-option-text">
+                    <div class="option-header">
+                        <h3>Professional</h3>
+                        <h2 id="pro-price">$25</h2>
+                        <span>Limited offer</span>
+                    </div>
+
+                    <div class="option-services">
+                        <span><img src="/Assets/icons/check.png"> 500 MB HDD</span>
+                        <span><img src="/Assets/icons/check.png"> 2 Subdomains</span>
+                        <span><img src="/Assets/icons/check.png"> 5 E-mails</span>
+                        <span><img src="/Assets/icons/check.png"> One years license</span>
+                        <span><img src="/Assets/icons/cross.png"> Full support</span>
+                    </div>
+                </div>
+
+                <button class="option-btn">Begin</button>
+            </div>
+
+            <div class="price-option premium-style">
+                <div class="price-option-text">
+                    <div class="option-header">
+                        <h3>Premium</h3>
+                        <h2 id="premium-price">$60</h2>
+                        <span>Limited offer</span>
+                    </div>
+                    <div class="option-services">
+                        <span><img src="/Assets/icons/check.png"> 500 MB HDD</span>
+                        <span><img src="/Assets/icons/check.png"> 2 Subdomains</span>
+                        <span><img src="/Assets/icons/check.png"> 5 E-mails</span>
+                        <span><img src="/Assets/icons/check.png"> One years license</span>
+                        <span><img src="/Assets/icons/check.png"> Full support</span>
+                    </div>
+                </div>
+
+                <button class="option-btn">Begin</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!--Formulario-->
+    <section id="form-container">
+        <div id="form-info">
+            <h2>Any questions?</h2>
+            <span>Leave your email or call us!</span>
+
+            <div id="info-icons">
+                <div id="mail-info">
+                    <img src="Assets/icons/message-icon.png" width="20" height="20" alt="">
+                    <span>info@bestshop.xyz</span>
+                </div>
+
+                <div id="phone-info">
+                    <img src="Assets/icons/phone-icon.png" width="20" height="20" alt="">
+                    <span>123 456 789</span>
+                </div>
+            </div>
+        </div>
+
+        <form id="form" action="https://jsonplaceholder.typicode.com/guide/" method="POST">
+            <label for="name">NAME</label><br>
+            <input id="name" name="name" type="text"><br /><br />
+            <label for="email">EMAIL</label><br />
+            <input id="email" name="email" type="text">
+            <div id="check">
+                <div id="tick"><input id="consent" name="consent" type="checkbox"></div>
+                <label for="consent">
+                    <span>I hereby give consent for my personal data included in my application to be
+                        processed
+                        for the purposes of the recruitment process under the European Parliament’s and
+                        Council of the European Union Regulation on the Protection of Natural Persons as
+                        of
+                        27 April 2016, with regard to the processing of personal data and on the free
+                        movement of such data, and repealing Directive 95/46/EC (Data Protection
+                        Directive)
+                    </span>
+                </label>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+
+    </section>
+
+    <!--Footer-->
+    <footer id="footer-container">
+        <div id="footer-logo">
+            <h2>OXYGEN Shop</h2>
+            <span>2022 OXYGEN. All Rights Reserved</span>
+        </div>
+        <div id="social-media">
+            <a target="_blank" href="https://twitter.com"><img src="Assets/icons/Twitter.png" width="24" height="24"
+                    alt="Twitter"></a>
+            <a target="_blank" href="https://facebook.com"><img src="Assets/icons/Facebook.png" width="24" height="24"
+                    alt="Facebook"></a>
+        </div>
+
+        <button id="return-top"><img src="/Assets/icons/top-alignment.png" alt="Return Top Icon" /></button>
+    </footer>
+
+    <script src="Scripts/script.js"></script>
+</body>
+
+</html>
