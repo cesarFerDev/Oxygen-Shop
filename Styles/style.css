@@ -289,14 +289,14 @@ body {
 #rombo-img {
   position: relative;
   width: 35%;
-  left: 5em;
-  bottom: 2em;
+  left: 3.5em;
+  bottom: 1em;
 }
 
 #mac-img {
   position: absolute;
   width: 60%;
-  left: 5em;
+  left: 3.5em;
   z-index: 1;
 }
 
