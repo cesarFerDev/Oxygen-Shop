@@ -116,7 +116,7 @@ body {
 
 #form-dialog {
   @include fonts("Open Sans", 24px, 400);
-  color: black;
+  color: var(--oxygen-blue);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -154,7 +154,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20%;
+  margin-top: 200px;
   text-align: center
 }
 
@@ -168,17 +168,17 @@ body {
   color: black;
 }
 
-#sub-header span {
-  margin-top: 1%;
+#sub-header h5 {
+  margin-top: 30px;
   @include fonts("Open Sans", 16px, 400);
   color: black;
 }
 
 #sub-header button {
-  margin-top: 2%;
+  margin-top: 30px;
   height: 4em;
   width: 28%;
-  min-width: 200px;
+  min-width: 440px;
   border-radius: 40px;
   border: 0;
   background: var(--oxygen-blue);
@@ -192,6 +192,7 @@ body {
 }
 
 #why-us {
+  margin-top: 50px;
   width: 100%;
 }
 
@@ -204,6 +205,10 @@ body {
 
 #sub-header-images img {
   width: 15%;
+}
+
+#img-entries {
+  padding: 10px;
 }
 
 
@@ -251,7 +256,7 @@ body {
   @include fonts("Raleway", 32px, 400);
 }
 
-.carta-text-font span {
+.carta-text-font p {
   @include fonts("Open Sans", 16px, 400);
 }
 
@@ -325,8 +330,9 @@ body {
   width: 90%;
 }
 
-#pricing-container h2 {
+#pricing-title {
   @include fonts("Raleway", 36px, 400);
+  margin-bottom: 20px;
 }
 
 .option-header h2 {
@@ -341,7 +347,7 @@ body {
   padding-bottom: 1%;
 }
 
-.option-header span {
+.option-header h5 {
   @include fonts("Raleway", 12px, 700);
   text-align: center;
 }
@@ -352,6 +358,7 @@ body {
   border-color: var(--oxygen-blue);
   border-radius: 7px;
   border-width: 2px;
+  margin-bottom: 20px;
 }
 
 #pricing-options {
@@ -380,13 +387,14 @@ body {
 }
 
 .option-services {
+  @include fonts("Open Sans", 14px, 400);
   margin-top: 5%;
   display: flex;
   flex-direction: column;
 }
 
 .option-services span {
-  margin: 3% 0;
+  margin: 10px 0;
 }
 
 .option-btn {
@@ -495,7 +503,7 @@ body {
   @include fonts("Raleway", 49px, 400);
 }
 
-#form-info span {
+#form-info h5 {
   margin-top: 3%;
   @include fonts("Open Sans", 16px, 400);
 }
@@ -506,7 +514,7 @@ body {
 }
 
 #info-icons {
-  margin-top: 5%;
+  margin-top: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -577,6 +585,7 @@ body {
   border-bottom: 1px solid;
   border-color: #95989A;
   width: 70%;
+  margin-top: 20px;
 }
 
 #consent {
@@ -673,12 +682,12 @@ body {
     text-underline-offset: 50%;
   }
 
-  #sub-header {
-    margin-top: 40%;
+  #sub-header h2 {
+    font-size: 35px;
   }
 
   #sub-header-images img {
-    width: 35%;
+    width: 50%;
     margin-top: 5%;
   }
 
@@ -687,16 +696,42 @@ body {
     align-items: center;
   }
 
+  #sub-header h3 {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 300;
+    width: 80%;
+  }
+
+  #sub-header h5 {
+    width: 80%;
+  }
+
+  #sub-header button {
+    min-width: 310px;
+  }
 
   .carta {
     height: 100%;
     flex-direction: column-reverse;
   }
 
+  #carta-segunda {
+    flex-direction: column;
+  }
+
   #carta-tercera {
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     overflow: hidden;
+  }
+
+  .carta-text-font h2 {
+    font-size: 30px;
+  }
+
+  .carta-text-font p {
+    font-size: 14px;
   }
 
   .carta-text {
@@ -728,28 +763,39 @@ body {
   }
 
   .price-option {
-    height: 240px;
-    margin-bottom: 10%;
+    height: 300px;
+    margin-bottom: 15%;
     width: 80%;
   }
 
+  .option-header {
+    width: 50%;
+  }
+
+  .option-services {
+    text-align: left;
+    width: 50%;
+  }
+
   .price-option-text {
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
   }
 
   .option-btn {
-    width: 30%;
-    height: 3em;
-    top: 220px;
+    width: 50%;
+    min-width: 150px;
+    height: 50px;
+    top: 270px;
   }
 
   #form-container {
     display: flex;
     flex-direction: column;
-
+    width: 85%;
 
   }
 
@@ -759,9 +805,14 @@ body {
     text-align: left;
   }
 
+  #form-info h2 {
+    font-size: 40px;
+  }
+
   #form button {
-    margin-top: 10%;
-    margin-left: 30%;
+    margin-top: 15%;
+    margin-left: 23%;
+    width: 50%;
   }
 
   #info-icons {
