@@ -659,12 +659,12 @@ body {
 }
 
 #return-top {
-  width: 80px;
+  width: 70px;
   height: 60px;
   display: flex;
   justify-content: flex-end;
   position: absolute;
-  bottom: 8em;
+  bottom: 7em;
   right: 1em;
   border-width: 0;
   background: none;
@@ -677,7 +677,7 @@ body {
 }
 
 #return-top img {
-  width: 80px;
+  width: 70px;
 }
 
 /*Elementos en vertical en el corte de resolución 1000px*/
@@ -708,6 +708,12 @@ body {
   }
   .menu-item:hover {
     text-underline-offset: 50%;
+  }
+  #modal {
+    width: 90%;
+  }
+  #form-dialog {
+    font-size: 20px;
   }
   #sub-header h2 {
     font-size: 35px;
@@ -838,7 +844,7 @@ body {
     margin-top: 10%;
   }
   #return-top img {
-    width: 60px;
+    width: 40px;
   }
   #name,
   #email {

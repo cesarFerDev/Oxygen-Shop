@@ -624,12 +624,12 @@ body {
 }
 
 #return-top {
-  width: 80px;
+  width: 70px;
   height: 60px;
   display: flex;
   justify-content: flex-end;
   position: absolute;
-  bottom: 8em;
+  bottom: 7em;
   right: 1em;
   border-width: 0;
   background: none;
@@ -642,7 +642,7 @@ body {
 }
 
 #return-top img {
-  width: 80px;
+  width: 70px;
 }
 
 
@@ -680,6 +680,14 @@ body {
 
   .menu-item:hover {
     text-underline-offset: 50%;
+  }
+
+  #modal {
+    width: 90%;
+  }
+
+  #form-dialog {
+    font-size: 20px;
   }
 
   #sub-header h2 {
@@ -842,7 +850,7 @@ body {
   }
 
   #return-top img {
-    width: 60px;
+    width: 40px;
   }
 
   #name,
