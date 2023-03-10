@@ -35,7 +35,7 @@ body {
 }
 
 #logo {
-  margin-left: 3%;
+  margin-left: 3em;
   font-family: "Raleway";
   font-size: 32px;
   font-weight: 300;
@@ -149,7 +149,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 200px;
+  margin-top: 10em;
   text-align: center;
 }
 
@@ -500,9 +500,8 @@ body {
 }
 
 /* Módulo carrousel imágenes*/
-#carousel {
+#carousel-container {
   width: 80%;
-  position: relative;
 }
 
 /*Módulo formulario y contacto*/
@@ -682,6 +681,9 @@ body {
 
 /*Elementos en vertical en el corte de resolución 1000px*/
 @media screen and (max-width: 1000px) {
+  #logo {
+    margin-left: 1em;
+  }
   #header-images {
     margin: 0;
     flex-direction: column;
@@ -694,9 +696,11 @@ body {
   }
   .menu {
     display: none;
+    position: absolute;
   }
   .menu-desplegable {
     padding-top: 12%;
+    top: 70px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -828,7 +832,7 @@ body {
   }
   #mail-info {
     width: 100%;
-    margin-bottom: 2%;
+    margin-bottom: 2em;
   }
   #phone-info {
     width: 100%;
