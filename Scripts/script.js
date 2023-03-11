@@ -40,21 +40,28 @@ const form  = document.getElementById("form");
 const nombre = document.getElementById("name");
 const email = document.getElementById("email");
 const checkbox = document.getElementById("consent");
+const checkboxText = document.getElementById("conditions");
 
 
-nombre.addEventListener("blur", () => {  //Blur para que se ponga rojo al salir del campo y no compruebe nada más clicar
+nombre.addEventListener("blur", () => {  
     if (!(validateName())) {
         nombre.style.borderColor = "red";
+    } else {
+        nombre.style.borderColor = "#95989A";
     }
 });
 email.addEventListener("blur", () => {
     if ((!validateMail())) {
         email.style.borderColor = "red";
+    } else {
+        email.style.borderColor = "#95989A";
     }
 });
-checkbox.addEventListener("blur", () => { //No sé cómo cambiar color
+checkbox.addEventListener("blur", () => { 
     if (!(validateCheckbox())) {
-        checkbox.style.outlineColor = "red";
+        checkboxText.style.color = "red";
+    } else {
+        checkboxText.style.color = "#95989A";
     }
 });
 
@@ -69,7 +76,19 @@ form.addEventListener("submit", (event) => {
         email.placeholder = "";
         checkbox.checked = false;
         alert("We'll keep you updated!"); //Para comprbar que funciona el "submit"
-    }
+    } else {
+        if (!validateName()) {
+            nombre.style.borderColor = "red";
+        }
+        if (!validateMail()) {
+            email.style.borderColor = "red";
+        }
+        if (!validateCheckbox()) {
+            checkboxText.style.color = "red";
+        }    
+    } 
+    
+    
     nombre.value = "";
     email.value = "";
 }, false);
@@ -83,7 +102,7 @@ function validateName() {
     }   
 }
 
-function validateMail() {  //Debería haber hecho estas funciones con parámetros para comprobar también el input del modal pero no me da la vida
+function validateMail() { 
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(form.email.value)) {
         return true;
     } else {
@@ -109,7 +128,7 @@ const premiumPrice = document.getElementById("premium-price");
 
 let oldValue = currencySelector.value;
 
-currencySelector.addEventListener("change", async() => {  //Seguramente el algoritmo más ridículo para resolver esto, cuando tenga una base sólida de la página lo intentaré optimizar
+currencySelector.addEventListener("change", async() => { 
 
     let newValue = currencySelector.value;
     let symbol = "";
@@ -165,9 +184,8 @@ window.addEventListener("load", () => {
 window.addEventListener("scroll", () => {
     let percent = calcPercentage();
     if (storage.getItem("visit") == null && percent >= 25 && (!(modal.open))) {
-
-        storage.setItem("visit", true);
         modal.showModal();
+        storage.setItem("visit", true);
     }
 });
 
@@ -178,6 +196,8 @@ closeBtn.addEventListener("click", () => {
 emailDialog.addEventListener("blur", () => {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailDialog.value) ===  false) {
         emailDialog.style.borderColor = "red";
+    } else {
+        emailDialog.style.borderColor = "#95989A";
     }
 });
 
@@ -190,5 +210,6 @@ formDialog.addEventListener("submit", (event) => {
         alert("Thank you!");  //Para comprbar que funciona el "submit"
     } else {
         emailDialog.value = "";
+        emailDialog.style.borderColor = "red";
     }
 });

@@ -546,12 +546,15 @@ body {
   margin-bottom: 2%;
   display: flex;
   flex-direction: row;
-  @include fonts("Open Sans", 12px, 400);
-  letter-spacing: 0px;
-  color: #707070;
   width: 70%;
   max-width: 60em;
   max-height: 15em;
+}
+
+#conditions {
+  @include fonts("Open Sans", 12px, 400);
+  letter-spacing: 0px;
+  color: #707070;
 }
 
 #tick {
