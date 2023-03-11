@@ -87,10 +87,6 @@ form.addEventListener("submit", (event) => {
             checkboxText.style.color = "red";
         }    
     } 
-    
-    
-    nombre.value = "";
-    email.value = "";
 }, false);
 
 function validateName() {  
