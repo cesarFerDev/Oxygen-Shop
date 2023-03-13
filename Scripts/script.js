@@ -1,5 +1,5 @@
 
-/*Módulo Burger Menú*/
+//Módulo Burger Menú
 
 const burgerBtn = document.getElementById("burger-btn");
 const menu = document.querySelector(".menu");
@@ -35,6 +35,59 @@ backTop.addEventListener("click", () => {
     },200); 
 })
 
+//Modal
+
+const storage = window.sessionStorage;
+const modal = document.getElementById("modal");
+const closeBtn = document.getElementById("close-modal");
+const formDialog = document.getElementById("form-dialog");
+const emailDialog = document.getElementById("subscribe");
+
+window.addEventListener("load", () => {
+    if (!(modal.open) && storage.getItem("visit") == null) {
+        storage.setItem("visit", true);
+        setTimeout(()=>{
+            modal.showModal();
+         },5000);
+    }
+    
+});
+
+window.addEventListener("scroll", () => {
+    let percent = calcPercentage();
+    if (storage.getItem("visit") == null && percent >= 25 && (!(modal.open))) {
+        modal.showModal();
+        storage.setItem("visit", true);
+    }
+});
+
+closeBtn.addEventListener("click", () => {
+    modal.close();
+});
+
+emailDialog.addEventListener("blur", () => {
+    if (!validateMail(emailDialog.value)) {
+        emailDialog.style.borderColor = "red";
+    } else {
+        emailDialog.style.borderColor = "#95989A";
+    }
+});
+
+formDialog.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if(validateMail(formDialog.subscribe.value)) {
+        //formDialog.submit();  //Comentado para no ser redirigido si se hacee el submit
+        modal.close();
+        alert("Thank you!");  //Para comprbar que funciona el "submit"
+    } else {
+        emailDialog.value = "";
+        emailDialog.placeholder = "example@mail.com";
+        emailDialog.style.borderColor = "red";
+    }
+});
+
+
 //Formulario
 const form  = document.getElementById("form");
 const nombre = document.getElementById("name");
@@ -44,14 +97,14 @@ const checkboxText = document.getElementById("conditions");
 
 
 nombre.addEventListener("blur", () => {  
-    if (!(validateName())) {
+    if (!(validateName(nombre.value))) {
         nombre.style.borderColor = "red";
     } else {
         nombre.style.borderColor = "#95989A";
     }
 });
 email.addEventListener("blur", () => {
-    if ((!validateMail())) {
+    if ((!validateMail(form.email.value))) {
         email.style.borderColor = "red";
     } else {
         email.style.borderColor = "#95989A";
@@ -68,7 +121,12 @@ checkbox.addEventListener("blur", () => {
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    if(validateName() && validateMail() && validateCheckbox()) {
+    let nameCorrect = validateName(nombre.value);
+    let mailCorrect = validateName(form.email.value);
+    let checkCorrect = validateCheckbox();
+
+
+    if(nameCorrect && mailCorrect && checkCorrect) {
         //form.submit();  //Comentado para no ser redirigido si se hacee el submit
         nombre.style.borderColor = "#95989A";  //Reset de campos y estilos
         email.style.borderColor = "#95989A";
@@ -79,30 +137,34 @@ form.addEventListener("submit", (event) => {
         checkbox.checked = false;
         alert("We'll keep you updated!"); //Para comprbar que funciona el "submit"
     } else {
-        if (!validateName()) {
+        if (!nameCorrect) {
+            nombre.value = "";
             nombre.style.borderColor = "red";
             nombre.placeholder = "Name field must contain between 2 and 100 characters";
         }
-        if (!validateMail()) {
+        if (!mailCorrect) {
+            email.value = "";
             email.style.borderColor = "red";
             email.placeholder = "example@mail.com"
         }
-        if (!validateCheckbox()) {
+        if (!checkCorrect) {
             checkboxText.style.color = "red";
         }    
     } 
 }, false);
 
-function validateName() {  
-    if (nombre.value.length < 2 || nombre.value.length > 100) {
+//Funciones validación
+
+function validateName(nameCandidate) {  
+    if (nameCandidate.length < 2 || nameCandidate.length > 100) {
         return false;
     } else {
         return true;
     }   
 }
 
-function validateMail() { 
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(form.email.value)) {
+function validateMail(mailCandidate) { 
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mailCandidate)) {
         return true;
     } else {
         return false;
@@ -158,56 +220,4 @@ currencySelector.addEventListener("change", async() => {
         console.log(error);
     }
     
-});
-
-
-//Modal
-
-const storage = window.sessionStorage;
-const modal = document.getElementById("modal");
-const closeBtn = document.getElementById("close-modal");
-const formDialog = document.getElementById("form-dialog");
-const emailDialog = document.getElementById("subscribe");
-
-window.addEventListener("load", () => {
-    if (!(modal.open) && storage.getItem("visit") == null) {
-        storage.setItem("visit", true);
-        setTimeout(()=>{
-            modal.showModal();
-         },5000);
-    }
-    
-});
-
-window.addEventListener("scroll", () => {
-    let percent = calcPercentage();
-    if (storage.getItem("visit") == null && percent >= 25 && (!(modal.open))) {
-        modal.showModal();
-        storage.setItem("visit", true);
-    }
-});
-
-closeBtn.addEventListener("click", () => {
-    modal.close();
-});
-
-emailDialog.addEventListener("blur", () => {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailDialog.value) ===  false) {
-        emailDialog.style.borderColor = "red";
-    } else {
-        emailDialog.style.borderColor = "#95989A";
-    }
-});
-
-formDialog.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(formDialog.subscribe.value)) {
-        //formDialog.submit();  //Comentado para no ser redirigido si se hacee el submit
-        modal.close();
-        alert("Thank you!");  //Para comprbar que funciona el "submit"
-    } else {
-        emailDialog.value = "";
-        emailDialog.style.borderColor = "red";
-    }
 });
