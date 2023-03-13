@@ -73,15 +73,19 @@ form.addEventListener("submit", (event) => {
         nombre.style.borderColor = "#95989A";  //Reset de campos y estilos
         email.style.borderColor = "#95989A";
         nombre.placeholder = "";
+        nombre.value = "";
         email.placeholder = "";
+        email.value = "";
         checkbox.checked = false;
         alert("We'll keep you updated!"); //Para comprbar que funciona el "submit"
     } else {
         if (!validateName()) {
             nombre.style.borderColor = "red";
+            nombre.placeholder = "Name field must contain between 2 and 100 characters";
         }
         if (!validateMail()) {
             email.style.borderColor = "red";
+            email.placeholder = "example@mail.com"
         }
         if (!validateCheckbox()) {
             checkboxText.style.color = "red";
@@ -91,7 +95,6 @@ form.addEventListener("submit", (event) => {
 
 function validateName() {  
     if (nombre.value.length < 2 || nombre.value.length > 100) {
-        nombre.placeholder = "Name field must contain between 2 and 100 characters";
         return false;
     } else {
         return true;
@@ -102,7 +105,6 @@ function validateMail() {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(form.email.value)) {
         return true;
     } else {
-        email.placeholder = "example@mail.com"
         return false;
     }
 }
